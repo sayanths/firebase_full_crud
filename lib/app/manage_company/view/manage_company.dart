@@ -53,10 +53,16 @@ class ManageCompany extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            const Text(
-              "List of Companies",
-              style: TextStyle(
-                  color: grey, fontSize: 18, fontWeight: FontWeight.w500),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "List of Companies",
+                  style: TextStyle(
+                      color: grey, fontSize: 18, fontWeight: FontWeight.w500),
+                ),
+              ),
             ),
             StreamBuilder(
               stream:

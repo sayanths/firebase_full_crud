@@ -14,6 +14,10 @@ class CompanyAddingController extends GetxController {
     update();
   }
 
+  onDeleteName(String id) {
+    FirebaseFirestore.instance.collection('company').doc(id).delete();
+  }
+
   @override
   void dispose() {
     companyAddingController.clear();

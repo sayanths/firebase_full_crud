@@ -66,8 +66,27 @@ class ManageCompany extends StatelessWidget {
                   return Expanded(
                     child: ListView(
                       children: snapshot.data!.docs.map((e) {
-                        return CompanyListTileCustom(
-                            size: size, data: e['companies']);
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ColoredBox(
+                            color: grey,
+                            child: ListTile(
+                              title: Text(
+                                e["companies"],
+                                style:
+                                    const TextStyle(color: white, fontSize: 20),
+                              ),
+                              trailing: IconButton(
+                                  onPressed: () {
+                                    category.onDeleteName(e.id);
+                                  },
+                                  icon: const Icon(
+                                    Icons.delete,
+                                    color: white,
+                                  )),
+                            ),
+                          ),
+                        );
                       }).toList(),
                     ),
                   );
@@ -83,44 +102,44 @@ class ManageCompany extends StatelessWidget {
   }
 }
 
-class CompanyListTileCustom extends StatelessWidget {
-  final String data;
-  const CompanyListTileCustom({
-    Key? key,
-    required this.size,
-    required this.data,
-  }) : super(key: key);
+// class CompanyListTileCustom extends StatelessWidget {
+//   final String data;
+//   const CompanyListTileCustom({
+//     Key? key,
+//     required this.size,
+//     required this.data,
+//   }) : super(key: key);
 
-  final Size size;
+//   final Size size;
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        height: size.height / 15,
-        width: size.width / 1,
-        decoration:
-            BoxDecoration(color: grey, borderRadius: BorderRadius.circular(5)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Text(
-                data,
-                style: const TextStyle(color: white, fontSize: 20),
-              ),
-            ),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.delete,
-                  color: white,
-                ))
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.all(8.0),
+//       child: Container(
+//         height: size.height / 15,
+//         width: size.width / 1,
+//         decoration:
+//             BoxDecoration(color: grey, borderRadius: BorderRadius.circular(5)),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             Padding(
+//               padding: const EdgeInsets.symmetric(horizontal: 15),
+//               child: Text(
+//                 data,
+//                 style: const TextStyle(color: white, fontSize: 20),
+//               ),
+//             ),
+//             IconButton(
+//                 onPressed: () {},
+//                 icon: const Icon(
+//                   Icons.delete,
+//                   color: white,
+//                 ))
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

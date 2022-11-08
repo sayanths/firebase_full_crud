@@ -24,7 +24,6 @@ class HomePage extends StatelessWidget {
         children: [
           InkWell(
               onTap: () {
-                print("object");
                 Get.to(() => const ProductView());
               },
               child: CustomContainer(size: size, title: "Products")),

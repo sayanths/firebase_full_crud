@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 
 class ProductAddingScreen extends GetxController {
   String dropDownSelectedItem = 'Category';
-    String dropDownSelectedItemCompany = 'Company';
+  String dropDownSelectedItemCompany = 'Company';
 
   final productNameController = TextEditingController();
-   final descriptionController = TextEditingController();
-      final priceController = TextEditingController();
-         final qtyController = TextEditingController();
+  final descriptionController = TextEditingController();
+  final priceController = TextEditingController();
+  final qtyController = TextEditingController();
 
   List<String> category = <String>[
     'Category',
@@ -31,5 +31,10 @@ class ProductAddingScreen extends GetxController {
   dropDownValueChange(String value) {
     dropDownSelectedItem = value;
     update();
+  }
+
+
+  onPress(){
+    
   }
 }

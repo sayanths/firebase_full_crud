@@ -7,6 +7,8 @@ class ProductAddingScreen extends GetxController {
 
   final productNameController = TextEditingController();
    final descriptionController = TextEditingController();
+      final priceController = TextEditingController();
+         final qtyController = TextEditingController();
 
   List<String> category = <String>[
     'Category',

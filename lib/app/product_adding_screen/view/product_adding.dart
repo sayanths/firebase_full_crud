@@ -48,7 +48,7 @@ class ProductAddingImage extends StatelessWidget {
                 );
               }).toList(),
               onChanged: (value) {
-              //  data.dropDownValueChange(value!);
+                data.dropDownValueChange(value!);
               },
             ),
           ),
@@ -63,7 +63,7 @@ class ProductAddingImage extends StatelessWidget {
                 );
               }).toList(),
               onChanged: (value) {
-               // data.dropDownValueChange(value!);
+                data.dropDownValueChange(value!);
               },
             ),
           ),
@@ -76,14 +76,14 @@ class ProductAddingImage extends StatelessWidget {
             ),
           ),
           CustomTextformField(
-            controller: data.descriptionController,
+            controller: data.priceController,
             decoration: const InputDecoration(
               hintText: "Price",
               border: OutlineInputBorder(),
             ),
           ),
           CustomTextformField(
-            controller: data.descriptionController,
+            controller: data.qtyController,
             decoration: const InputDecoration(
               hintText: "Qty",
               border: OutlineInputBorder(),

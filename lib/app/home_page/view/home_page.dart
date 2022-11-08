@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:gurjart/app/manage_category/view/manage_category.dart';
+import 'package:gurjart/app/manage_company/view/manage_company.dart';
 import 'package:gurjart/app/product_home_view/view/home_product_view.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,14 +20,24 @@ class HomePage extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 68, 68, 68),
       ),
       body: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           InkWell(
               onTap: () {
                 print("object");
                 Get.to(() => const ProductView());
               },
-              child: CustomContainer(size: size, title: "title"))
+              child: CustomContainer(size: size, title: "Products")),
+          InkWell(
+              onTap: () {
+                Get.to(() => const ManageCategory());
+              },
+              child: CustomContainer(size: size, title: 'Manage Category')),
+          InkWell(
+              onTap: () {
+                Get.to(() => const ManageCompany());
+              },
+              child: CustomContainer(size: size, title: 'Manage Comapny')),
         ],
       ),
     );

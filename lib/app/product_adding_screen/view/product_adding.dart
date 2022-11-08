@@ -102,7 +102,11 @@ class ProductAddingImage extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: ElevatedButton(onPressed: () {}, child: const Text("Save")),
+            child: ElevatedButton(
+                onPressed: () {
+                  data.onPress();
+                },
+                child: const Text("Save")),
           )
         ],
       ),

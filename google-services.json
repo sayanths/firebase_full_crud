@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1011180831562",
+    "project_id": "gujratwork-cb6bd",
+    "storage_bucket": "gujratwork-cb6bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011180831562:android:038af5296ff9016461f7b3",
+        "android_client_info": {
+          "package_name": "com.example.gurjart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1011180831562-088gg67ocgh0kqhfookfhn1n46e4jr01.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPHBSHl6m-AZBGRd8GbYTJp9GoXPqPMEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1011180831562-088gg67ocgh0kqhfookfhn1n46e4jr01.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

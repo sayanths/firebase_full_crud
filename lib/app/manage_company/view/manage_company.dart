@@ -40,7 +40,7 @@ class ManageCompany extends StatelessWidget {
             CustomTextformField(
               controller: context.companyAddingController,
               decoration: const InputDecoration(
-                  border: OutlineInputBorder(), label: Text("Category Name")),
+                  border: OutlineInputBorder(), label: Text("Company Name")),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),

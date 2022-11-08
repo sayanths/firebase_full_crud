@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 class CompanyAddingController extends GetxController {
   final companyAddingController = TextEditingController();
 
-  List<String> list = [];
   onPress(String? companyName) {
     final company = FirebaseFirestore.instance
         .collection('company')

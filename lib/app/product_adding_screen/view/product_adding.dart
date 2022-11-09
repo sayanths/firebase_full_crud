@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gurjart/app/product_adding_screen/controller/product_adding.dart';
@@ -37,20 +38,13 @@ class ProductAddingImage extends StatelessWidget {
             decoration: const InputDecoration(
                 border: OutlineInputBorder(), label: Text("Product Name")),
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: DropdownButton(
-              value: data.dropDownSelectedItem,
-              items: data.category.map((String value) {
-                return DropdownMenuItem(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
-              onChanged: (value) {
-                data.dropDownValueChange(value!);
-              },
-            ),
+          StreamBuilder<QuerySnapshot>(
+            stream: data.comapnyCollection.snapshots(),
+            builder: (context, snapshot) {
+              return snapshot.hasData
+                  ? data.onData(snapshot)
+                  : const Text("Loading");
+            },
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -93,11 +87,10 @@ class ProductAddingImage extends StatelessWidget {
           const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              ImagePicerCustom(),
-              ImagePicerCustom(),
-              ImagePicerCustom(),
-              ImagePicerCustom(),
+            children: [
+              ImagePicerCustom(data: data),
+              // ImagePicerCustom(),
+              // ImagePicerCustom(),
             ],
           ),
           Padding(
@@ -115,25 +108,32 @@ class ProductAddingImage extends StatelessWidget {
 }
 
 class ImagePicerCustom extends StatelessWidget {
+  final ProductAddingScreen data;
   const ImagePicerCustom({
     Key? key,
+    required this.data,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 80,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: const Color.fromARGB(255, 7, 7, 7),
-          style: BorderStyle.solid,
-          width: 1.0,
+    return InkWell(
+      onTap: () {
+        data.pickImage();
+      },
+      child: Container(
+        height: 50,
+        width: 80,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: const Color.fromARGB(255, 7, 7, 7),
+            style: BorderStyle.solid,
+            width: 1.0,
+          ),
+          color: white,
+          borderRadius: BorderRadius.circular(5),
         ),
-        color: white,
-        borderRadius: BorderRadius.circular(5),
+        child: const Icon(Icons.add),
       ),
-      child: const Icon(Icons.add),
     );
   }
 }
